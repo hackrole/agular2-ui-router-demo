@@ -5,12 +5,20 @@ import {UIROUTER_DIRECTIVES} from 'ui-router-ng2';
 @Component({
     directives: [UIROUTER_DIRECTIVES],
     template: `
-        <h3>Some People:</h3>
-        <ul>
-          <li *ngFor="let person of people">
-            <a uiSref="person" [uiParams]="{personId: person.id}">{{person.name}}</a>
-          </li>
-        </ul>
+        <div class="flex-h">
+            <div class="people">
+              <h3>some people:</h3>
+              <ul>
+                <li *ngFor='let person of people'>
+                    <a uiSref=".person" [uiParams]="{personId: person.id}">
+                        {{person.name}}
+                    </a>
+                </li>
+              </ul>
+            </div>
+
+            <ui-view></ui-view>
+        </div>
     `
 })
 export class People {

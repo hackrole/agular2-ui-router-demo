@@ -22,14 +22,15 @@ export const peopleState = {
 };
 
 export const personState = {
-    name: 'person',
-    url: '/people/:personId',
+    name: 'people.person',
+    url: '/:personId',
     component: Person,
     resolve: [
         {
             token: 'person',
-            deps: [Transition, PeopleService],
-            resolveFn: (trans, peopleSvc) => peopleSvc.getPerson(trans.params().personId),
+            deps: [Transition, 'people'],
+            resolveFn: (trans, people) =>
+                peoplec.find(person => person.id === trans.params().personId);
         },
     ],
 };
