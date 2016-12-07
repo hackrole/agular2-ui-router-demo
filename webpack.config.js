@@ -6,7 +6,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 
 module.exports = {
-  entry: './src/helloworld.ts',
+  entry: './src/hellosolarsystem.ts',
   output: {
     path: root('dist'),
     filename: 'app.bundle.js',
